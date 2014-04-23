@@ -47,7 +47,10 @@ class IntervallicCommandRunner(object):
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option('-i', '--command-interval', dest="command_interval", action="store", type="float", default=1.0)
-    parser.add_option('-c', '--command', dest="command", action="store", default='cat')
+    parser.add_option('-i', '--command-interval', dest="command_interval",
+                      action="store", type="float", default=1.0)
+    parser.add_option('-c', '--command', dest="command", action="store",
+                      default='cat')
     options, _ = parser.parse_args()
-    StreamCommandRunner(options.command, options.command_interval).loop_indefinitely()
+    IntervallicCommandRunner(options.command,
+                             options.command_interval).loop_indefinitely()
