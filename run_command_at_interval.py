@@ -41,7 +41,7 @@ class IntervallicCommandRunner(object):
         self.last_time = time.time()
         while True:
             Popen([self.command], shell=True, stdin=PIPE).communicate(
-            	self._accumulate_input()
+                self._accumulate_input()
             )
 
 
